@@ -1,8 +1,10 @@
-# Mhujer_View_Helper_Email
-
+Mhujer_View_Helper_Email
+================================
 Helps you to obfuscate an e-mail address
 
-## API
+API
+--------
+```php
     /**
      * Obfuscates an e-mail address
      *
@@ -12,11 +14,16 @@ Helps you to obfuscate an e-mail address
      */
     public function email($address, $mailto = false)
     {
+```
 
-
-## Use
+Use
+--------
+```php
 echo $this->email('somebody@somewhere.sometld');
-//will print "somebody&#64;<!---->somewhere.sometld"
 
+//will print "somebody&#64;<!---->somewhere.sometld"
+```
+```php
 echo $this->email('somebody@somewhere.sometld', true);
 //will print "<a href="mailto:somebody&#64;somewhere.sometld">somebody&#64;<!---->somewhere.sometld</a>"
+```
