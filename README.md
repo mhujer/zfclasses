@@ -9,3 +9,9 @@ Help you to convert string to url friendly string
 
 - See http://framework.zend.com/wiki/display/ZFPROP/Zend_Filter_Sanitize+-+Martin+Hujer
 - See http://framework.zend.com/wiki/display/ZFPROP/Zend_Filter_Transliteration+-+Martin+Hujer
+
+
+# Mhujer_View_Helper_FileSize(Simple)
+Helper to display filesize in a friendly format
+
+- See http://framework.zend.com/wiki/display/ZFPROP/Zend_View_Helper_FileSize+-+Martin+Hujer
