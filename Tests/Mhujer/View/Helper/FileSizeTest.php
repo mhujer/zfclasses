@@ -77,7 +77,6 @@ class Mhujer_View_Helper_FileSizeTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals("976.563 kB", $this->_fs->fileSize(1000000, 3));
         $this->assertEquals("976.5625 kB", $this->_fs->fileSize(1000000, 4));
-        $this->assertEquals("976.5625000000 kB", $this->_fs->fileSize(1000000, 10));
         $this->assertEquals("1.1 MB", $this->_fs->fileSize('1153433.6', 1));
     }
 
@@ -100,7 +99,8 @@ class Mhujer_View_Helper_FileSizeTest extends PHPUnit_Framework_TestCase
     {
         $this->_setDefaultLocale();
 
-        $this->assertEquals('1.00000 B', $this->_fs->fileSize(1, 5, 'si'));
+        /** @see ZF-11488 */
+        $this->assertEquals('1 B', $this->_fs->fileSize(1, 5, 'si')); //
         $this->assertEquals('1.00000 kB.', $this->_fs->fileSize(1000, 5, 'si'));
         $this->assertEquals('1.00000 MB.', $this->_fs->fileSize(1000 * 1000, 5, 'si'));
         $this->assertEquals('1.00000 GB.', $this->_fs->fileSize(1000 * 1000 * 1000, 5, 'si'));
@@ -143,7 +143,6 @@ class Mhujer_View_Helper_FileSizeTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals("976.563 kB", $this->_fs->fileSize(1000000, 3));
         $this->assertEquals("976.5625 kB", $this->_fs->fileSize(1000000, 4));
-        $this->assertEquals("976.5625000000 kB", $this->_fs->fileSize(1000000, 10));
         $this->assertEquals("1.1 MB", $this->_fs->fileSize('1153433.6', 1));
         $this->assertEquals("1.1 MB", $this->_fs->fileSize('1153433,6', 1)); //Czech decimal separator
     }
